@@ -1,3 +1,3 @@
-# uppgift-python
+# slutuppgift-python
 
 uppgift till systemutveckling i python
