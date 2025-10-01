@@ -1,4 +1,8 @@
-def show_menu(): 
+
+
+
+
+def show_menu1(): 
 
 #meny som du kan välja vad du vill göra
     print("---- VÄLKOMMEN ----")
@@ -13,6 +17,14 @@ def show_menu():
    #E, avsluta hela programmet och återgår till terminalen
     print("[E] STÄNG PROGRAM")
 
+
+#konfigurera larm över: 1.CPU, 2. minne, 3.disk, 4.tillbaka till huvudmenyn. 
+def show_menu2():
+    print("---SKAPA LARM---")
+    print("[A] CPU")
+    print("[B] Minne")
+    print("[C] Disk")
+    print("[D] Tillbaka till huvudmenyn")
 #hantera menyvalen, bestämmer vad som ska ske, (ska bytas senare) 
 def handle_menu(val):
     val = val.upper()  # Gör det versalkänsligt (A-E)
@@ -31,11 +43,29 @@ def handle_menu(val):
     else: 
         print("Ogiltligt val")
     
+    
     return True  
 
 # Kör själva meny-loopen
 fortsätt = True
 while fortsätt:
-    show_menu()
+    show_menu1()
     användarval = input("Välj ett alternativ (A-E): ")
     fortsätt = handle_menu(användarval)
+
+    go = True
+    while go:
+        if användarval.upper() == "C":
+            show_menu2()
+            användarval2 = input("Välj ett alternativ (A-D): ")
+            användarval2 = användarval2.upper()
+            if användarval2 == "A":
+                print("Du har valt CPU")
+            elif användarval2 == "B":
+                print("Du har valt Minne")
+            elif användarval2 == "C":
+                print("Du har valt Disk")
+            elif användarval2 == "D":
+                go = False
+            else:
+                print("Ogiltligt val")
